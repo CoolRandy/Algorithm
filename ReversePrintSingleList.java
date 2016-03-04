@@ -1,6 +1,7 @@
 package com.coolrandy;
 
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Node;
+import java.util.ArrayList;
 
 /**
  * Created by randy on 2016/3/4.
@@ -27,6 +28,21 @@ public class ReversePrintSingleList {
         if(listNode != null){
             reversePrintList(listNode.next);
             System.out.print(listNode.data + " ");
+        }
+    }
+
+    /**
+     * 根据牛客的提测系统进行的编码
+     * 采用的仍然是递归，本质上采用的 堆栈结构
+     */
+    public class Solution {
+        public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+            ArrayList<Integer> list = new ArrayList<Integer>();
+            if(listNode != null){
+                list = printListFromTailToHead(listNode.next);
+                list.add(listNode.data);
+            }
+            return list;
         }
     }
 
