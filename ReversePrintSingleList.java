@@ -47,11 +47,13 @@ public class ReversePrintSingleList {
     }
 
     /**
-     * 反转链表
+     * 反转链表  从前向后依次进行反转就好
      * @param listNode
      */
     public static ListNode reverseSingleList(ListNode listNode){
-
+        if (null == listNode){
+            return null;
+        }
         ListNode tempNode;
         ListNode prevNode = null;
         while (listNode.next != null){
@@ -69,7 +71,7 @@ public class ReversePrintSingleList {
     }
     public static void main(String[] args){
 
-        boolean isRecursion = true;
+        boolean isRecursion = false;
 
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
@@ -92,6 +94,9 @@ public class ReversePrintSingleList {
                 System.out.print(listNode.data + " ");
                 listNode = listNode.next;
             }while (listNode != null);
+
+            ListNode listNode1 = reverseSingleList(node1);
+            System.out.print(listNode);
         }
 
     }
