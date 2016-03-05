@@ -24,7 +24,7 @@ public class DeleteNodeFromList {
      */
     public static void deleteNode(ListNode head, ListNode listNode){
 
-        if(listNode == null){
+        if(listNode == null || null == head){
             return;
         }
         if(listNode != null && listNode.next != null) {
