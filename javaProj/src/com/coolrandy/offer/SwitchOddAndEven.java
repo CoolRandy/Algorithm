@@ -12,7 +12,11 @@ public class SwitchOddAndEven {
         //判断是否为偶数
         return (ele & 1) == 0;
     }
-    private static int[] switchOddWithEven(int[] arr){
+    private static void switchOddWithEven(int[] arr){
+
+        if (null == arr || arr.length == 0){
+            return;
+        }
 
         int begin = 0;
         int end = arr.length - 1;
@@ -34,20 +38,12 @@ public class SwitchOddAndEven {
                 arr[end] = temp;
             }
         }
-
-        return arr;
     }
 
-    public static void swap(int a, int b){
-
-        int temp = a;
-        a = b;
-        b = temp;
-    }
     public static void main(String[] args){
         int[] a = {2, 3, 9, 4, 2, 8, 15, 17, 6};
-        int[] result = switchOddWithEven(a);
-        for (int ele: result){
+        switchOddWithEven(a);
+        for (int ele: a){
             System.out.print(ele + " ");
         }
     }
